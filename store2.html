@@ -21,10 +21,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 body{
   font-family:sans-serif;
-  overflow:hidden;
-  background:#5e3984;
-}
 
+  background:#5e3984;
+
+  overflow:hidden; /* disable scroll during splash */
+}
 /* ================= SPLASH SCREEN ================= */
 
 .splash{
@@ -87,6 +88,7 @@ body{
 
 .main-content{
   min-height:100vh;
+
   background:#5e3984;
 
   opacity:0;
@@ -96,6 +98,8 @@ body{
 
   display:flex;
   flex-direction:column;
+
+  padding-bottom:110px; /* space for bottom nav */
 }
 
 /* ================= HEADER ================= */
@@ -116,9 +120,10 @@ body{
 /* LOGO */
 
 .logo img{
-  width:60px;
+  width:50px;
   object-fit:contain;
 }
+
 
 /* PROFILE ICON */
 
@@ -146,7 +151,7 @@ body{
 .content{
   flex:1;
   padding:20px;
-  overflow:auto;
+  
   padding-bottom:100px;
 }
 
@@ -416,6 +421,212 @@ body{
 
   display:block;
 }
+/* ================= HORIZONTAL CATEGORY SCROLL ================= */
+
+.category-scroll{
+  width:100%;
+
+  display:flex;
+  align-items:flex-start;
+
+  gap:10px; /* reduced gap */
+
+  overflow-x:auto;
+  overflow-y:hidden;
+
+  margin-top:4px;
+  padding-bottom:2px;
+
+  scrollbar-width:none;
+}
+
+/* HIDE SCROLLBAR */
+
+.category-scroll::-webkit-scrollbar{
+  display:none;
+}
+
+/* ITEM */
+
+.category-item{
+  flex:none;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  min-width:60px; /* smaller */
+}
+
+/* PNG IMAGE */
+
+.category-item img{
+  width:48px;   /* decreased size */
+  height:48px;
+
+  object-fit:contain;
+
+  display:block;
+}
+
+/* TEXT */
+
+.category-item p{
+  margin-top:5px;
+
+  font-size:10px; /* smaller text */
+  color:#fff;
+
+  text-align:center;
+}
+/* ================= BANNER SLIDER ================= */
+/* ================= BANNER SLIDER ================= */
+
+/* ================= BANNER SLIDER ================= */
+
+.banner-slider{
+  width:calc(100% - 32px);
+
+  height:150px;
+
+  position:relative;
+
+  margin:8px auto 0; /* pushed upward */
+
+  overflow:hidden;
+
+  border-radius:24px;
+}
+
+/* SLIDE */
+
+.banner-slide{
+  position:absolute;
+  inset:0;
+
+  opacity:0;
+
+  transition:.6s ease;
+}
+
+/* ACTIVE */
+
+.banner-slide.active{
+  opacity:1;
+}
+
+/* IMAGE */
+
+.banner-slide img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+/* ================= DOTS ================= */
+
+.slider-dots{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  margin-top:12px;
+}
+
+/* DOT */
+
+.dot{
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.35);
+
+  transition:.3s;
+}
+
+/* ACTIVE DOT */
+
+.dot.active{
+  width:22px;
+
+  border-radius:20px;
+
+  background:#fff;
+}
+/* ================= PRODUCT GRID ================= */
+
+.product-grid{
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:18px 12px;
+
+  margin-top:20px;
+}
+
+/* ITEM */
+
+.product-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* IMAGE */
+
+.product-item img{
+  width:90px;
+  height:90px;
+
+  object-fit:contain;
+
+  display:block;
+}
+
+/* TEXT */
+
+.product-item p{
+  margin-top:6px;
+
+  color:#fff;
+
+  font-size:11px;
+
+  text-align:center;
+}
+/* ================= SECTION TITLE ================= */
+
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+  font-family:'Azonix', sans-serif;
+
+  font-size:16px;
+
+  letter-spacing:3px;
+
+  color:#fff;
+
+  margin-top:22px;
+  margin-bottom:14px;
+
+  text-transform:uppercase;
+
+  text-align:center; /* centered */
+}
+
 </style>
 </head>
 
@@ -465,13 +676,91 @@ body{
 </div>
   <!-- CONTENT -->
 
-  <div class="content">
+  <!-- ================= AUTO SLIDER ================= -->
 
-    <div class="banner">
-      Main Content Area
-    </div>
+<div class="banner-slider" id="bannerSlider">
 
+  <!-- SLIDE 1 -->
+
+  <div class="banner-slide active">
+    <img src="store2/1.webp" alt="" loading="lazy">
   </div>
+
+  <!-- SLIDE 2 -->
+
+  <div class="banner-slide">
+    <img src="store2/2.webp" alt="" loading="lazy">
+  </div>
+
+  <!-- SLIDE 3 -->
+
+  <div class="banner-slide">
+    <img src="store2/3.webp" alt="" loading="lazy">
+  </div>
+
+</div>
+
+<!-- DOTS -->
+
+<div class="slider-dots">
+
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+
+</div>
+<!-- ================= SECTION HEADING ================= -->
+
+<h2 class="section-title">  Sarres</h2>
+
+<!-- ================= PRODUCT GRID ================= -->
+
+<div class="product-grid">
+
+  <!-- ITEM 1 -->
+
+  <div class="product-item">
+    <img src="store2/4.webp" alt="" loading="lazy">
+    <p>Silk Sarees</p>
+  </div>
+
+  <!-- ITEM 2 -->
+
+  <div class="product-item">
+    <img src="store2/5.webp" alt="" loading="lazy">
+    <p>Cotton Sarees</p>
+  </div>
+
+  <!-- ITEM 3 -->
+
+  <div class="product-item">
+    <img src="store2/6.webp" alt="" loading="lazy">
+    <p>Modern Sarees</p>
+  </div>
+
+  <!-- ITEM 4 -->
+
+  <div class="product-item">
+    <img src="store2/7.webp" alt="" loading="lazy">
+    <p>Regional Sarees</p>
+  </div>
+
+  <!-- ITEM 5 -->
+
+  <div class="product-item">
+    <img src="store2/8.webp" alt="" loading="lazy">
+    <p>Chanderi Saree</p>
+  </div>
+
+  <!-- ITEM 6 -->
+
+  <div class="product-item">
+    <img src="store2/9.webp" alt="" loading="lazy">
+    <p>Khadi Saree</p>
+  </div>
+
+</div>
+
 
 </div>
 
@@ -523,7 +812,8 @@ body{
   <div class="store-list">
 
     <!-- STORE 1 -->
-<div class="store-card" onclick="window.location.href='index.html'">
+
+  <div class="store-card" onclick="window.location.href='index.html'">
   <img src="1.webp" alt="Store">
 </div>
 
@@ -553,6 +843,63 @@ function closeStorePopup(){
   document.getElementById("storePopup")
   .classList.remove("active");
 }
+
+let slides = document.querySelectorAll(".banner-slide");
+let dots = document.querySelectorAll(".dot");
+
+let currentSlide = 0;
+
+/* SHOW SLIDE */
+
+function showSlide(index){
+
+  slides.forEach(slide=>{
+    slide.classList.remove("active");
+  });
+
+  dots.forEach(dot=>{
+    dot.classList.remove("active");
+  });
+
+  slides[index].classList.add("active");
+  dots[index].classList.add("active");
+}
+
+/* AUTO CHANGE */
+
+setInterval(()=>{
+
+  currentSlide++;
+
+  if(currentSlide >= slides.length){
+    currentSlide = 0;
+  }
+
+  showSlide(currentSlide);
+
+},3000);
+
+/* SCROLL CHANGE */
+
+let slider = document.getElementById("bannerSlider");
+
+slider.addEventListener("wheel",function(){
+
+  currentSlide++;
+
+  if(currentSlide >= slides.length){
+    currentSlide = 0;
+  }
+
+  showSlide(currentSlide);
+
+});
+setTimeout(()=>{
+
+  document.body.style.overflowX = "hidden";
+  document.body.style.overflowY = "auto";
+
+},2200);
 
 </script>
 </body>
