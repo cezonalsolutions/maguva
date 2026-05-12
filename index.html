@@ -120,10 +120,9 @@ body{
 /* LOGO */
 
 .logo img{
-  width:50px;
+  width:60px;
   object-fit:contain;
 }
-
 
 /* PROFILE ICON */
 
@@ -487,7 +486,7 @@ body{
 .banner-slider{
   width:calc(100% - 32px);
 
-  height:150px;
+  height:185px;
 
   position:relative;
 
@@ -626,7 +625,229 @@ body{
 
   text-align:center; /* centered */
 }
+/* ================= MAKEUP SCROLL ================= */
+/* ================= MAKEUP SCROLL ================= */
 
+.makeup-scroll{
+  width:100%;
+
+  display:flex;
+
+  gap:14px;
+
+  overflow-x:auto;
+  overflow-y:hidden;
+
+  margin-top:18px;
+
+  padding:0 16px 4px; /* left-right edge gap */
+
+  scrollbar-width:none;
+}
+
+/* HIDE SCROLLBAR */
+
+.makeup-scroll::-webkit-scrollbar{
+  display:none;
+}
+
+/* CARD */
+
+.makeup-card{
+  position:relative;
+
+  flex:none;
+
+  width:140px;
+  height:180px;
+
+  border-radius:22px;
+
+  overflow:hidden;
+}
+
+/* IMAGE */
+
+.makeup-card img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+/* TEXT INSIDE IMAGE */
+
+.makeup-card span{
+  position:absolute;
+
+  left:12px;
+  bottom:14px;
+
+  color:#fff;
+
+  font-size:13px;
+  font-weight:600;
+
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.55);
+}
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+  font-family:'Azonix', sans-serif;
+
+  font-size:16px;
+
+  letter-spacing:3px;
+
+  color:#fff;
+
+  margin-top:24px;
+  margin-bottom:16px;
+
+  text-transform:uppercase;
+
+  text-align:center;
+}
+/* ================= APPOINTMENT HEADING ================= */
+
+.appointment-heading{
+  font-family:'Azonix', sans-serif;
+
+  font-size:16px;
+
+  letter-spacing:3px;
+
+  color:#fff;
+
+  text-align:center;
+
+  margin-top:26px;
+  margin-bottom:18px;
+
+  text-transform:uppercase;
+}
+/* ================= APPOINTMENT FORM ================= */
+/* ================= APPOINTMENT FORM ================= */
+
+.appointment-form{
+  width:100%;
+
+  padding:0 24px;
+
+  margin-top:14px;
+}
+
+/* INPUT GROUP */
+
+.input-group{
+  position:relative;
+
+  width:100%;
+
+  margin-bottom:28px;
+}
+
+/* INPUT + SELECT */
+
+.input-group input,
+.input-group select{
+  width:100%;
+
+  background:transparent;
+
+  border:none;
+  outline:none;
+
+  border-bottom:1.5px solid rgba(255,255,255,.22);
+
+  padding:12px 2px;
+
+  color:#fff;
+
+  font-size:15px;
+
+  font-weight:400;
+
+  letter-spacing:.4px;
+
+  transition:.3s;
+
+  font-family:'Poppins', sans-serif;
+}
+
+/* PLACEHOLDER */
+
+.input-group input::placeholder{
+  color:rgba(255,255,255,.55);
+
+  letter-spacing:.3px;
+}
+
+/* FOCUS EFFECT */
+
+.input-group input:focus,
+.input-group select:focus{
+  border-bottom:1.5px solid rgba(255,255,255,.95);
+}
+
+/* SELECT */
+
+.input-group select{
+  color:rgba(255,255,255,.72);
+
+  appearance:none;
+
+  cursor:pointer;
+}
+
+/* OPTIONS */
+
+.input-group select option{
+  color:#000;
+}
+
+/* BUTTON */
+
+.book-btn{
+  width:100%;
+  height:54px;
+
+  border:none;
+  outline:none;
+
+  border-radius:18px;
+
+  background:#fff;
+
+  color:#5e3984;
+
+  font-family:'Azonix', sans-serif;
+
+  font-size:11px;
+
+  letter-spacing:2px;
+
+  margin-top:18px;
+
+  cursor:pointer;
+
+  transition:.35s;
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.18);
+}
+
+/* HOVER */
+
+.book-btn:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(0,0,0,.24);
+}
 </style>
 </head>
 
@@ -683,19 +904,19 @@ body{
   <!-- SLIDE 1 -->
 
   <div class="banner-slide active">
-    <img src="img/9.webp" alt="" loading="lazy">
+    <img src="store3/30.webp" alt="" loading="lazy">
   </div>
 
   <!-- SLIDE 2 -->
 
   <div class="banner-slide">
-    <img src="img/12.webp" alt="" loading="lazy">
+    <img src="store3/31.webp" alt="" loading="lazy">
   </div>
 
   <!-- SLIDE 3 -->
 
   <div class="banner-slide">
-    <img src="img/13.webp" alt="" loading="lazy">
+    <img src="store3/32.webp" alt="" loading="lazy">
   </div>
 
 </div>
@@ -710,108 +931,124 @@ body{
 
 </div>
 <!-- ================= SECTION HEADING ================= -->
+<!-- ================= MAKEUP SCROLL ================= -->
+<h2 class="section-title">Makeup</h2>
+<div class="makeup-scroll">
 
-<h2 class="section-title">Necklaces</h2>
+  <!-- CARD 1 -->
 
-<!-- ================= PRODUCT GRID ================= -->
-
-<div class="product-grid">
-
-  <!-- ITEM 1 -->
-
-  <div class="product-item">
-    <img src="img/21.webp" alt="" loading="lazy">
-    <p>Chain necklaces</p>
+  <div class="makeup-card">
+    <img src="store3/1.webp" alt="" loading="lazy">
+    <span>Foundation</span>
   </div>
 
-  <!-- ITEM 2 -->
+  <!-- CARD 2 -->
 
-  <div class="product-item">
-    <img src="img/22.webp" alt="" loading="lazy">
-    <p>Choker necklaces</p>
+  <div class="makeup-card">
+    <img src="store3/4.webp" alt="" loading="lazy">
+    <span>Concealer</span>
   </div>
 
-  <!-- ITEM 3 -->
+  <!-- CARD 3 -->
 
-  <div class="product-item">
-    <img src="img/23.webp" alt="" loading="lazy">
-    <p>Layered necklaces</p>
+  <div class="makeup-card">
+    <img src="store3/3.webp" alt="" loading="lazy">
+    <span>Compact/Powder</span>
   </div>
 
-  <!-- ITEM 4 -->
+  <!-- CARD 4 -->
 
-  <div class="product-item">
-    <img src="img/24.webp" alt="" loading="lazy">
-    <p>Tennis necklaces</p>
+  <div class="makeup-card">
+    <img src="store3/2.webp" alt="" loading="lazy">
+    <span>Eyeshadow</span>
   </div>
 
-  <!-- ITEM 5 -->
+  <!-- CARD 5 -->
 
-  <div class="product-item">
-    <img src="img/25.webp" alt="" loading="lazy">
-    <p>Lockets necklaces</p>
+  <div class="makeup-card">
+    <img src="store3/5.webp" alt="" loading="lazy">
+    <span>Eyeliner/Mascara</span>
   </div>
 
-  <!-- ITEM 6 -->
+  <!-- CARD 6 -->
 
-  <div class="product-item">
-    <img src="img/26.webp" alt="" loading="lazy">
-    <p>Station necklaces</p>
+  <div class="makeup-card">
+    <img src="store3/7.webp" alt="" loading="lazy">    <span>Lipstick</span>
   </div>
 
 </div>
 
-<!-- ================= SECTION HEADING ================= -->
+ <h2 class="appointment-heading">
+  Book An Appointment
+</h2>
 
-<h2 class="section-title">Rings</h2>
+<!-- ================= APPOINTMENT FORM ================= -->
 
-<!-- ================= PRODUCT GRID ================= -->
+<div class="appointment-form">
 
-<div class="product-grid">
+  <!-- NAME -->
 
-  <!-- ITEM 1 -->
-
-  <div class="product-item">
-    <img src="img/27.webp" alt="" loading="lazy">
-    <p>Solitaire Rings</p>
+  <div class="input-group">
+    <input type="text" placeholder="Name">
   </div>
 
-  <!-- ITEM 2 -->
+  <!-- MOBILE -->
 
-  <div class="product-item">
-     <img src="img/28.webp" alt="" loading="lazy">
-    <p>Couple Rings</p>
+  <div class="input-group">
+    <input type="tel" placeholder="Mobile Number">
   </div>
 
-  <!-- ITEM 3 -->
+  <!-- EVENT -->
 
-  <div class="product-item">
-    <img src="img/29.webp" alt="" loading="lazy">
-    <p>Diamond Rings</p>
+  <div class="input-group">
+    <input type="text" placeholder="Type Of Event">
   </div>
 
-  <!-- ITEM 4 -->
+  <!-- LOCATION -->
 
-  <div class="product-item">
-    <img src="img/30.webp" alt="" loading="lazy">
-    <p>Gold Rings</p>
+  <div class="input-group">
+    <input type="text" placeholder="Location">
   </div>
 
-  <!-- ITEM 5 -->
+  <!-- DROPDOWN -->
 
-  <div class="product-item">
-     <img src="img/31.webp" alt="" loading="lazy">
-    <p>Silver Rings</p>
+  <div class="input-group">
+
+    <select>
+      <option selected disabled>Makeup Type</option>
+
+      <option>Foundation</option>
+      <option>Concealer</option>
+      <option>Primer</option>
+      <option>Compact Powder</option>
+      <option>Blush</option>
+      <option>Highlighter</option>
+      <option>Contour</option>
+      <option>Eyeshadow</option>
+      <option>Eyeliner</option>
+      <option>Mascara</option>
+      <option>Eyebrow Pencil</option>
+      <option>Lipstick</option>
+      <option>Lip Gloss</option>
+      <option>Lip Liner</option>
+      <option>Nail Polish</option>
+      <option>Body Shimmer</option>
+      <option>Body Lotion</option>
+      <option>Body Mist</option>
+
+    </select>
+
   </div>
 
-  <!-- ITEM 6 -->
+  <!-- BUTTON -->
 
-  <div class="product-item">
-     <img src="img/32.webp" alt="" loading="lazy">
-    <p>Adjustable Rings</p>
-  </div>
+  <button class="book-btn">
+    Book Now
+  </button>
 
 </div>
+
+  
 
 </div>
 
@@ -864,19 +1101,19 @@ body{
 
     <!-- STORE 1 -->
 
-   <div class="store-card" onclick="closeStorePopup()">
+   <div class="store-card" onclick="window.location.href='index.html'">
   <img src="1.webp" alt="Store">
 </div>
 
     <!-- STORE 2 -->
 
-   <div class="store-card" onclick="window.location.href='store2.html'">
+  <div class="store-card" onclick="window.location.href='store2.html'">
   <img src="2.webp" alt="Store">
 </div>
 
     <!-- STORE 3 -->
 
-  <div class="store-card" onclick="window.location.href='store3.html'">
+  <div class="store-card" onclick="closeStorePopup()">
   <img src="3.webp" alt="Store">
 </div>
 
