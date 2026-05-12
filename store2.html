@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Maguva Ethnics</title>
+
+<link href="https://fonts.cdnfonts.com/css/azonix" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:sans-serif;
+  overflow:hidden;
+  background:#5e3984;
+}
+
+/* ================= SPLASH SCREEN ================= */
+
+.splash{
+  position:fixed;
+  inset:0;
+  background:#5e3984;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  z-index:9999;
+
+  animation:hideSplash .8s ease forwards;
+  animation-delay:2s;
+}
+
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.brand-text span{
+  font-family:'Azonix', sans-serif;
+  font-size:38px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+
+  color:#fff;
+
+  text-shadow:
+    0 4px 12px rgba(0,0,0,.35),
+    0 0 18px rgba(255,255,255,.12);
+
+  opacity:0;
+  transform:translateY(30px) scale(.9);
+
+  animation:logoReveal 1.2s ease forwards;
+}
+
+.brand-text p{
+  margin-top:14px;
+
+  color:#f4eaff;
+
+  font-size:15px;
+  letter-spacing:10px;
+  text-transform:uppercase;
+
+  opacity:0;
+
+  animation:fadeIn 1s ease forwards;
+  animation-delay:.6s;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content{
+  min-height:100vh;
+  background:#5e3984;
+
+  opacity:0;
+
+  animation:showContent 1s ease forwards;
+  animation-delay:2.2s;
+
+  display:flex;
+  flex-direction:column;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+  width:100%;
+  height:75px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 18px;
+
+  background:#5e3984;
+}
+
+/* LOGO */
+
+.logo img{
+  width:60px;
+  object-fit:contain;
+}
+
+/* PROFILE ICON */
+
+.profile-icon{
+  width:40px;
+  height:40px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.14);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+
+  font-size:17px;
+
+  cursor:pointer;
+}
+
+/* ================= PAGE CONTENT ================= */
+
+.content{
+  flex:1;
+  padding:20px;
+  overflow:auto;
+  padding-bottom:100px;
+}
+
+/* DEMO CARD */
+
+.banner{
+  width:100%;
+  height:180px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,.10);
+
+  backdrop-filter:blur(8px);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* ================= BOTTOM NAVIGATION ================= */
+
+.bottom-bar{
+  width:100%;
+  height:78px;
+
+  background:#5e3984;
+
+  position:fixed;
+  bottom:0;
+  left:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+
+  padding-bottom:5px;
+}
+
+/* NAV ITEMS */
+
+.nav-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+
+  color:rgba(255,255,255,.75);
+
+  font-size:11px;
+
+  gap:6px;
+
+  transition:.3s;
+}
+
+.nav-item i{
+  font-size:20px;
+}
+
+.nav-item:hover{
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes logoReveal{
+
+  0%{
+    opacity:0;
+    transform:translateY(30px) scale(.9);
+    letter-spacing:18px;
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    letter-spacing:8px;
+  }
+
+}
+
+@keyframes fadeIn{
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes hideSplash{
+  to{
+    opacity:0;
+    visibility:hidden;
+  }
+}
+
+@keyframes showContent{
+  to{
+    opacity:1;
+  }
+}
+/* ================= SEARCH SECTION ================= */
+
+.search-section{
+  width:100%;
+  padding:0 20px;
+  margin-top:10px;
+  margin-bottom:20px;
+}
+
+.search-box{
+  width:100%;
+  height:52px;
+
+  background:rgba(255,255,255,.12);
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+
+  padding:0 18px;
+
+  backdrop-filter:blur(8px);
+}
+
+.search-box i{
+  color:rgba(255,255,255,.8);
+  font-size:16px;
+  margin-right:12px;
+}
+
+.search-box input{
+  flex:1;
+
+  background:none;
+  border:none;
+  outline:none;
+
+  color:#fff;
+  font-size:15px;
+}
+
+.search-box input::placeholder{
+  color:rgba(255,255,255,.65);
+}
+/* ================= STORE POPUP ================= */
+/* ================= STORE POPUP ================= */
+
+.store-popup{
+  position:fixed;
+  left:0;
+  bottom:-100%;
+
+  width:100%;
+  height:auto;
+
+  background:#ffffff;
+
+  border-radius:26px 26px 0 0;
+
+  z-index:99999;
+
+  transition:.45s ease;
+
+  padding:18px 16px 4px;
+
+  overflow:hidden;
+}
+
+/* OPEN */
+
+.store-popup.active{
+  bottom:0;
+}
+
+/* ================= TOP ================= */
+
+.popup-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:14px;
+}
+
+/* SELECT STORE TEXT */
+
+.popup-top h2{
+  font-size:18px;
+  font-weight:600;
+
+  color:#5e3984;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn{
+  width:34px;
+  height:34px;
+
+  border:none;
+  border-radius:50%;
+
+  background:#f2ebf8;
+
+  color:#5e3984;
+
+  font-size:15px;
+
+  cursor:pointer;
+}
+
+/* ================= STORE LIST ================= */
+
+.store-list{
+  width:100%;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:10px;
+
+  padding-bottom:0;
+  margin-bottom:0;
+}
+
+/* ================= STORE CARD ================= */
+
+.store-card{
+  width:100%;
+  height:112px;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.store-card:hover{
+  transform:scale(.98);
+}
+
+/* REMOVE EXTRA MOBILE GAP */
+
+.store-card:last-child{
+  margin-bottom:0;
+}
+
+/* ================= IMAGE ================= */
+
+.store-card img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= SPLASH SCREEN ================= -->
+
+<div class="splash">
+
+  <div class="brand-text">
+    <span>Maguva</span>
+    <p>Ethnics</p>
+  </div>
+
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main-content">
+
+  <!-- HEADER -->
+
+  <div class="header">
+
+    <!-- LOGO -->
+
+    <div class="logo">
+      <img src="logo2.webp" alt="Logo">
+    </div>
+
+    <!-- PROFILE -->
+
+    <div class="profile-icon">
+      <i class="fa-solid fa-user"></i>
+    </div>
+
+  </div>
+<!-- ================= SEARCH BAR ================= -->
+
+<div class="search-section">
+
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" placeholder="Search Jewellery...">
+  </div>
+
+</div>
+  <!-- CONTENT -->
+
+  <div class="content">
+
+    <div class="banner">
+      Main Content Area
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= BOTTOM NAVIGATION ================= -->
+
+<div class="bottom-bar">
+
+ <a href="javascript:void(0)" class="nav-item" onclick="openStorePopup()">
+    <i class="fa-solid fa-store"></i>
+    <span>Switch Store</span>
+  </a>
+
+  <a href="#" class="nav-item">
+    <i class="fa-solid fa-layer-group"></i>
+    <span>Categories</span>
+  </a>
+
+  <a href="#" class="nav-item">
+    <i class="fa-solid fa-headset"></i>
+    <span>Help</span>
+  </a>
+
+  <a href="#" class="nav-item">
+    <i class="fa-solid fa-user"></i>
+    <span>Account</span>
+  </a>
+
+</div>
+<!-- ================= STORE POPUP ================= -->
+
+<!-- ================= STORE POPUP ================= -->
+
+<div class="store-popup" id="storePopup">
+
+  <!-- TOP -->
+
+  <div class="popup-top">
+
+    <h2>Select Store</h2>
+
+    <button class="close-btn" onclick="closeStorePopup()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+  </div>
+
+  <!-- STORE LIST -->
+
+  <div class="store-list">
+
+    <!-- STORE 1 -->
+<div class="store-card" onclick="window.location.href='index.html'">
+  <img src="1.webp" alt="Store">
+</div>
+
+    <!-- STORE 2 -->
+
+   <div class="store-card" onclick="closeStorePopup()">
+  <img src="2.webp" alt="Store">
+</div>
+
+    <!-- STORE 3 -->
+
+  <div class="store-card" onclick="window.location.href='store3.html'">
+  <img src="3.webp" alt="Store">
+</div>
+
+  </div>
+
+</div>
+<script>
+
+function openStorePopup(){
+  document.getElementById("storePopup")
+  .classList.add("active");
+}
+
+function closeStorePopup(){
+  document.getElementById("storePopup")
+  .classList.remove("active");
+}
+
+</script>
+</body>
+
+</html>

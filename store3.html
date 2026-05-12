@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Maguva Ethnics</title>
+
+<link href="https://fonts.cdnfonts.com/css/azonix" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:sans-serif;
+
+  background:#5e3984;
+
+  overflow:hidden; /* disable scroll during splash */
+}
+/* ================= SPLASH SCREEN ================= */
+
+.splash{
+  position:fixed;
+  inset:0;
+  background:#5e3984;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  z-index:9999;
+
+  animation:hideSplash .8s ease forwards;
+  animation-delay:2s;
+}
+
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.brand-text span{
+  font-family:'Azonix', sans-serif;
+  font-size:38px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+
+  color:#fff;
+
+  text-shadow:
+    0 4px 12px rgba(0,0,0,.35),
+    0 0 18px rgba(255,255,255,.12);
+
+  opacity:0;
+  transform:translateY(30px) scale(.9);
+
+  animation:logoReveal 1.2s ease forwards;
+}
+
+.brand-text p{
+  margin-top:14px;
+
+  color:#f4eaff;
+
+  font-size:15px;
+  letter-spacing:10px;
+  text-transform:uppercase;
+
+  opacity:0;
+
+  animation:fadeIn 1s ease forwards;
+  animation-delay:.6s;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content{
+  min-height:100vh;
+
+  background:#5e3984;
+
+  opacity:0;
+
+  animation:showContent 1s ease forwards;
+  animation-delay:2.2s;
+
+  display:flex;
+  flex-direction:column;
+
+  padding-bottom:110px; /* space for bottom nav */
+}
+
+/* ================= HEADER ================= */
+
+.header{
+  width:100%;
+  height:75px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 18px;
+
+  background:#5e3984;
+}
+
+/* LOGO */
+
+.logo img{
+  width:60px;
+  object-fit:contain;
+}
+
+/* PROFILE ICON */
+
+.profile-icon{
+  width:40px;
+  height:40px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.14);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+
+  font-size:17px;
+
+  cursor:pointer;
+}
+
+/* ================= PAGE CONTENT ================= */
+
+.content{
+  flex:1;
+  padding:20px;
+  
+  padding-bottom:100px;
+}
+
+/* DEMO CARD */
+
+.banner{
+  width:100%;
+  height:180px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,.10);
+
+  backdrop-filter:blur(8px);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* ================= BOTTOM NAVIGATION ================= */
+
+.bottom-bar{
+  width:100%;
+  height:78px;
+
+  background:#5e3984;
+
+  position:fixed;
+  bottom:0;
+  left:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+
+  padding-bottom:5px;
+}
+
+/* NAV ITEMS */
+
+.nav-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+
+  color:rgba(255,255,255,.75);
+
+  font-size:11px;
+
+  gap:6px;
+
+  transition:.3s;
+}
+
+.nav-item i{
+  font-size:20px;
+}
+
+.nav-item:hover{
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes logoReveal{
+
+  0%{
+    opacity:0;
+    transform:translateY(30px) scale(.9);
+    letter-spacing:18px;
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    letter-spacing:8px;
+  }
+
+}
+
+@keyframes fadeIn{
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes hideSplash{
+  to{
+    opacity:0;
+    visibility:hidden;
+  }
+}
+
+@keyframes showContent{
+  to{
+    opacity:1;
+  }
+}
+/* ================= SEARCH SECTION ================= */
+
+.search-section{
+  width:100%;
+  padding:0 20px;
+  margin-top:10px;
+  margin-bottom:20px;
+}
+
+.search-box{
+  width:100%;
+  height:52px;
+
+  background:rgba(255,255,255,.12);
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+
+  padding:0 18px;
+
+  backdrop-filter:blur(8px);
+}
+
+.search-box i{
+  color:rgba(255,255,255,.8);
+  font-size:16px;
+  margin-right:12px;
+}
+
+.search-box input{
+  flex:1;
+
+  background:none;
+  border:none;
+  outline:none;
+
+  color:#fff;
+  font-size:15px;
+}
+
+.search-box input::placeholder{
+  color:rgba(255,255,255,.65);
+}
+/* ================= STORE POPUP ================= */
+/* ================= STORE POPUP ================= */
+
+.store-popup{
+  position:fixed;
+  left:0;
+  bottom:-100%;
+
+  width:100%;
+  height:auto;
+
+  background:#ffffff;
+
+  border-radius:26px 26px 0 0;
+
+  z-index:99999;
+
+  transition:.45s ease;
+
+  padding:18px 16px 4px;
+
+  overflow:hidden;
+}
+
+/* OPEN */
+
+.store-popup.active{
+  bottom:0;
+}
+
+/* ================= TOP ================= */
+
+.popup-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:14px;
+}
+
+/* SELECT STORE TEXT */
+
+.popup-top h2{
+  font-size:18px;
+  font-weight:600;
+
+  color:#5e3984;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn{
+  width:34px;
+  height:34px;
+
+  border:none;
+  border-radius:50%;
+
+  background:#f2ebf8;
+
+  color:#5e3984;
+
+  font-size:15px;
+
+  cursor:pointer;
+}
+
+/* ================= STORE LIST ================= */
+
+.store-list{
+  width:100%;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:10px;
+
+  padding-bottom:0;
+  margin-bottom:0;
+}
+
+/* ================= STORE CARD ================= */
+
+.store-card{
+  width:100%;
+  height:112px;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.store-card:hover{
+  transform:scale(.98);
+}
+
+/* REMOVE EXTRA MOBILE GAP */
+
+.store-card:last-child{
+  margin-bottom:0;
+}
+
+/* ================= IMAGE ================= */
+
+.store-card img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+/* ================= HORIZONTAL CATEGORY SCROLL ================= */
+
+.category-scroll{
+  width:100%;
+
+  display:flex;
+  align-items:flex-start;
+
+  gap:10px; /* reduced gap */
+
+  overflow-x:auto;
+  overflow-y:hidden;
+
+  margin-top:4px;
+  padding-bottom:2px;
+
+  scrollbar-width:none;
+}
+
+/* HIDE SCROLLBAR */
+
+.category-scroll::-webkit-scrollbar{
+  display:none;
+}
+
+/* ITEM */
+
+.category-item{
+  flex:none;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  min-width:60px; /* smaller */
+}
+
+/* PNG IMAGE */
+
+.category-item img{
+  width:48px;   /* decreased size */
+  height:48px;
+
+  object-fit:contain;
+
+  display:block;
+}
+
+/* TEXT */
+
+.category-item p{
+  margin-top:5px;
+
+  font-size:10px; /* smaller text */
+  color:#fff;
+
+  text-align:center;
+}
+/* ================= BANNER SLIDER ================= */
+/* ================= BANNER SLIDER ================= */
+
+/* ================= BANNER SLIDER ================= */
+
+.banner-slider{
+  width:calc(100% - 32px);
+
+  height:185px;
+
+  position:relative;
+
+  margin:8px auto 0; /* pushed upward */
+
+  overflow:hidden;
+
+  border-radius:24px;
+}
+
+/* SLIDE */
+
+.banner-slide{
+  position:absolute;
+  inset:0;
+
+  opacity:0;
+
+  transition:.6s ease;
+}
+
+/* ACTIVE */
+
+.banner-slide.active{
+  opacity:1;
+}
+
+/* IMAGE */
+
+.banner-slide img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+/* ================= DOTS ================= */
+
+.slider-dots{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  margin-top:12px;
+}
+
+/* DOT */
+
+.dot{
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.35);
+
+  transition:.3s;
+}
+
+/* ACTIVE DOT */
+
+.dot.active{
+  width:22px;
+
+  border-radius:20px;
+
+  background:#fff;
+}
+/* ================= PRODUCT GRID ================= */
+
+.product-grid{
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:18px 12px;
+
+  margin-top:20px;
+}
+
+/* ITEM */
+
+.product-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* IMAGE */
+
+.product-item img{
+  width:90px;
+  height:90px;
+
+  object-fit:contain;
+
+  display:block;
+}
+
+/* TEXT */
+
+.product-item p{
+  margin-top:6px;
+
+  color:#fff;
+
+  font-size:11px;
+
+  text-align:center;
+}
+/* ================= SECTION TITLE ================= */
+
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+  font-family:'Azonix', sans-serif;
+
+  font-size:16px;
+
+  letter-spacing:3px;
+
+  color:#fff;
+
+  margin-top:22px;
+  margin-bottom:14px;
+
+  text-transform:uppercase;
+
+  text-align:center; /* centered */
+}
+/* ================= MAKEUP SCROLL ================= */
+/* ================= MAKEUP SCROLL ================= */
+
+.makeup-scroll{
+  width:100%;
+
+  display:flex;
+
+  gap:14px;
+
+  overflow-x:auto;
+  overflow-y:hidden;
+
+  margin-top:18px;
+
+  padding:0 16px 4px; /* left-right edge gap */
+
+  scrollbar-width:none;
+}
+
+/* HIDE SCROLLBAR */
+
+.makeup-scroll::-webkit-scrollbar{
+  display:none;
+}
+
+/* CARD */
+
+.makeup-card{
+  position:relative;
+
+  flex:none;
+
+  width:140px;
+  height:180px;
+
+  border-radius:22px;
+
+  overflow:hidden;
+}
+
+/* IMAGE */
+
+.makeup-card img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+/* TEXT INSIDE IMAGE */
+
+.makeup-card span{
+  position:absolute;
+
+  left:12px;
+  bottom:14px;
+
+  color:#fff;
+
+  font-size:13px;
+  font-weight:600;
+
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.55);
+}
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+  font-family:'Azonix', sans-serif;
+
+  font-size:16px;
+
+  letter-spacing:3px;
+
+  color:#fff;
+
+  margin-top:24px;
+  margin-bottom:16px;
+
+  text-transform:uppercase;
+
+  text-align:center;
+}
+/* ================= APPOINTMENT HEADING ================= */
+
+.appointment-heading{
+  font-family:'Azonix', sans-serif;
+
+  font-size:16px;
+
+  letter-spacing:3px;
+
+  color:#fff;
+
+  text-align:center;
+
+  margin-top:26px;
+  margin-bottom:18px;
+
+  text-transform:uppercase;
+}
+/* ================= APPOINTMENT FORM ================= */
+/* ================= APPOINTMENT FORM ================= */
+
+.appointment-form{
+  width:100%;
+
+  padding:0 24px;
+
+  margin-top:14px;
+}
+
+/* INPUT GROUP */
+
+.input-group{
+  position:relative;
+
+  width:100%;
+
+  margin-bottom:28px;
+}
+
+/* INPUT + SELECT */
+
+.input-group input,
+.input-group select{
+  width:100%;
+
+  background:transparent;
+
+  border:none;
+  outline:none;
+
+  border-bottom:1.5px solid rgba(255,255,255,.22);
+
+  padding:12px 2px;
+
+  color:#fff;
+
+  font-size:15px;
+
+  font-weight:400;
+
+  letter-spacing:.4px;
+
+  transition:.3s;
+
+  font-family:'Poppins', sans-serif;
+}
+
+/* PLACEHOLDER */
+
+.input-group input::placeholder{
+  color:rgba(255,255,255,.55);
+
+  letter-spacing:.3px;
+}
+
+/* FOCUS EFFECT */
+
+.input-group input:focus,
+.input-group select:focus{
+  border-bottom:1.5px solid rgba(255,255,255,.95);
+}
+
+/* SELECT */
+
+.input-group select{
+  color:rgba(255,255,255,.72);
+
+  appearance:none;
+
+  cursor:pointer;
+}
+
+/* OPTIONS */
+
+.input-group select option{
+  color:#000;
+}
+
+/* BUTTON */
+
+.book-btn{
+  width:100%;
+  height:54px;
+
+  border:none;
+  outline:none;
+
+  border-radius:18px;
+
+  background:#fff;
+
+  color:#5e3984;
+
+  font-family:'Azonix', sans-serif;
+
+  font-size:11px;
+
+  letter-spacing:2px;
+
+  margin-top:18px;
+
+  cursor:pointer;
+
+  transition:.35s;
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.18);
+}
+
+/* HOVER */
+
+.book-btn:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(0,0,0,.24);
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= SPLASH SCREEN ================= -->
+
+<div class="splash">
+
+  <div class="brand-text">
+    <span>Maguva</span>
+    <p>Ethnics</p>
+  </div>
+
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main-content">
+
+  <!-- HEADER -->
+
+  <div class="header">
+
+    <!-- LOGO -->
+
+    <div class="logo">
+      <img src="logo2.webp" alt="Logo">
+    </div>
+
+    <!-- PROFILE -->
+
+    <div class="profile-icon">
+      <i class="fa-solid fa-user"></i>
+    </div>
+
+  </div>
+<!-- ================= SEARCH BAR ================= -->
+
+<div class="search-section">
+
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" placeholder="Search Jewellery...">
+  </div>
+
+</div>
+  <!-- CONTENT -->
+
+  <!-- ================= AUTO SLIDER ================= -->
+
+<div class="banner-slider" id="bannerSlider">
+
+  <!-- SLIDE 1 -->
+
+  <div class="banner-slide active">
+    <img src="store3/30.webp" alt="" loading="lazy">
+  </div>
+
+  <!-- SLIDE 2 -->
+
+  <div class="banner-slide">
+    <img src="store3/31.webp" alt="" loading="lazy">
+  </div>
+
+  <!-- SLIDE 3 -->
+
+  <div class="banner-slide">
+    <img src="store3/32.webp" alt="" loading="lazy">
+  </div>
+
+</div>
+
+<!-- DOTS -->
+
+<div class="slider-dots">
+
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+
+</div>
+<!-- ================= SECTION HEADING ================= -->
+<!-- ================= MAKEUP SCROLL ================= -->
+<h2 class="section-title">Makeup</h2>
+<div class="makeup-scroll">
+
+  <!-- CARD 1 -->
+
+  <div class="makeup-card">
+    <img src="store3/1.webp" alt="" loading="lazy">
+    <span>Foundation</span>
+  </div>
+
+  <!-- CARD 2 -->
+
+  <div class="makeup-card">
+    <img src="store3/4.webp" alt="" loading="lazy">
+    <span>Concealer</span>
+  </div>
+
+  <!-- CARD 3 -->
+
+  <div class="makeup-card">
+    <img src="store3/3.webp" alt="" loading="lazy">
+    <span>Compact/Powder</span>
+  </div>
+
+  <!-- CARD 4 -->
+
+  <div class="makeup-card">
+    <img src="beaty/2.jpeg" alt="" loading="lazy">
+    <span>Eyeshadow</span>
+  </div>
+
+  <!-- CARD 5 -->
+
+  <div class="makeup-card">
+    <img src="store3/5.webp" alt="" loading="lazy">
+    <span>Eyeliner/Mascara</span>
+  </div>
+
+  <!-- CARD 6 -->
+
+  <div class="makeup-card">
+    <img src="store3/7.webp" alt="" loading="lazy">    <span>Lipstick</span>
+  </div>
+
+</div>
+
+ <h2 class="appointment-heading">
+  Book An Appointment
+</h2>
+
+<!-- ================= APPOINTMENT FORM ================= -->
+
+<div class="appointment-form">
+
+  <!-- NAME -->
+
+  <div class="input-group">
+    <input type="text" placeholder="Name">
+  </div>
+
+  <!-- MOBILE -->
+
+  <div class="input-group">
+    <input type="tel" placeholder="Mobile Number">
+  </div>
+
+  <!-- EVENT -->
+
+  <div class="input-group">
+    <input type="text" placeholder="Type Of Event">
+  </div>
+
+  <!-- LOCATION -->
+
+  <div class="input-group">
+    <input type="text" placeholder="Location">
+  </div>
+
+  <!-- DROPDOWN -->
+
+  <div class="input-group">
+
+    <select>
+      <option selected disabled>Makeup Type</option>
+
+      <option>Foundation</option>
+      <option>Concealer</option>
+      <option>Primer</option>
+      <option>Compact Powder</option>
+      <option>Blush</option>
+      <option>Highlighter</option>
+      <option>Contour</option>
+      <option>Eyeshadow</option>
+      <option>Eyeliner</option>
+      <option>Mascara</option>
+      <option>Eyebrow Pencil</option>
+      <option>Lipstick</option>
+      <option>Lip Gloss</option>
+      <option>Lip Liner</option>
+      <option>Nail Polish</option>
+      <option>Body Shimmer</option>
+      <option>Body Lotion</option>
+      <option>Body Mist</option>
+
+    </select>
+
+  </div>
+
+  <!-- BUTTON -->
+
+  <button class="book-btn">
+    Book Now
+  </button>
+
+</div>
+
+  
+
+</div>
+
+<!-- ================= BOTTOM NAVIGATION ================= -->
+
+<div class="bottom-bar">
+
+ <a href="javascript:void(0)" class="nav-item" onclick="openStorePopup()">
+    <i class="fa-solid fa-store"></i>
+    <span>Switch Store</span>
+  </a>
+
+  <a href="#" class="nav-item">
+    <i class="fa-solid fa-layer-group"></i>
+    <span>Categories</span>
+  </a>
+
+  <a href="#" class="nav-item">
+    <i class="fa-solid fa-headset"></i>
+    <span>Help</span>
+  </a>
+
+  <a href="#" class="nav-item">
+    <i class="fa-solid fa-user"></i>
+    <span>Account</span>
+  </a>
+
+</div>
+<!-- ================= STORE POPUP ================= -->
+
+<!-- ================= STORE POPUP ================= -->
+
+<div class="store-popup" id="storePopup">
+
+  <!-- TOP -->
+
+  <div class="popup-top">
+
+    <h2>Select Store</h2>
+
+    <button class="close-btn" onclick="closeStorePopup()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+  </div>
+
+  <!-- STORE LIST -->
+
+  <div class="store-list">
+
+    <!-- STORE 1 -->
+
+   <div class="store-card" onclick="window.location.href='index.html'">
+  <img src="1.webp" alt="Store">
+</div>
+
+    <!-- STORE 2 -->
+
+  <div class="store-card" onclick="window.location.href='store2.html'">
+  <img src="2.webp" alt="Store">
+</div>
+
+    <!-- STORE 3 -->
+
+  <div class="store-card" onclick="closeStorePopup()">
+  <img src="3.webp" alt="Store">
+</div>
+
+  </div>
+
+</div>
+<script>
+
+function openStorePopup(){
+  document.getElementById("storePopup")
+  .classList.add("active");
+}
+
+function closeStorePopup(){
+  document.getElementById("storePopup")
+  .classList.remove("active");
+}
+
+let slides = document.querySelectorAll(".banner-slide");
+let dots = document.querySelectorAll(".dot");
+
+let currentSlide = 0;
+
+/* SHOW SLIDE */
+
+function showSlide(index){
+
+  slides.forEach(slide=>{
+    slide.classList.remove("active");
+  });
+
+  dots.forEach(dot=>{
+    dot.classList.remove("active");
+  });
+
+  slides[index].classList.add("active");
+  dots[index].classList.add("active");
+}
+
+/* AUTO CHANGE */
+
+setInterval(()=>{
+
+  currentSlide++;
+
+  if(currentSlide >= slides.length){
+    currentSlide = 0;
+  }
+
+  showSlide(currentSlide);
+
+},3000);
+
+/* SCROLL CHANGE */
+
+let slider = document.getElementById("bannerSlider");
+
+slider.addEventListener("wheel",function(){
+
+  currentSlide++;
+
+  if(currentSlide >= slides.length){
+    currentSlide = 0;
+  }
+
+  showSlide(currentSlide);
+
+});
+setTimeout(()=>{
+
+  document.body.style.overflowX = "hidden";
+  document.body.style.overflowY = "auto";
+
+},2200);
+
+</script>
+</body>
+
+</html>
